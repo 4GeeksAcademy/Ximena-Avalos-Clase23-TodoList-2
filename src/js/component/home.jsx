@@ -1,26 +1,41 @@
-import React from "react";
+import React, { useState } from 'react';
+import { ToDoList } from './toDoList';
 
-//include images into your bundle
-import rigoImage from "../../img/rigo-baby.jpg";
-
-//create your first component
 const Home = () => {
-	return (
-		<div className="text-center">
-			<h1 className="text-center mt-5">Hello Rigo!</h1>
-			<p>
-				<img src={rigoImage} />
-			</p>
-			<a href="#" className="btn btn-success">
-				If you see this green button... bootstrap is working...
-			</a>
-			<p>
-				Made by{" "}
-				<a href="http://www.4geeksacademy.com">4Geeks Academy</a>, with
-				love!
-			</p>
-		</div>
-	);
-};
+    const [newTask, setNewTask] = useState("");
+    const [taskList, setTaskList] = useState([]);
 
+    const handleFormSubmit = (event) => {
+        event.preventDefault();
+        if (newTask.trim() === "") return;
+        setTaskList([...taskList, newTask]);
+        setNewTask("");
+    };
+
+    const handleDeleteTask = (index) => {
+        setTaskList(taskList.filter((_, i) => i !== index));
+    };
+
+    return (
+        <main className="container">
+            <h1>To Do List!</h1>
+            <div className="card shadow-sm">
+                <div className="card-body">
+                    <form onSubmit={handleFormSubmit} className="mb-4">
+                        <input
+                            value={newTask}
+                            onChange={(event) => setNewTask(event.target.value)}
+                            className="form-control form-control-lg"
+                            placeholder="What needs to be done?"
+                        />
+                    </form>
+                    <ToDoList taskList={taskList} onDeleteTask={handleDeleteTask} />
+                </div>
+                <div className="card-footer">
+                    {taskList.length} item{taskList.length !== 1 ? 's' : ''} left
+                </div>
+            </div>
+        </main>
+    );
+};
 export default Home;
