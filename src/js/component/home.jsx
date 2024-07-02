@@ -38,8 +38,8 @@ const Home = () => {
           {taskList.length} item{taskList.length !== 1 ? 's' : ''} left
         </div>
       </div>
-      <div style={{height: "5px", width:"99%"}} className="border mx-1 shadow-sm"> </div>
-      <div style={{height: "5px", width:"97%"}} className="border mx-2 shadow-sm"> </div>
+      <div style={{height: "5px", width:"98%", backgroundColor:"#fff"}} className="border mx-1 shadow-sm rounded"> </div>
+      <div style={{height: "5px", width:"97%", backgroundColor:"#fff"}} className="border mx-2 shadow-sm rounded"> </div>
     </main>
   );
 };
