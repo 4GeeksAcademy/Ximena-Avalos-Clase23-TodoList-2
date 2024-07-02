@@ -1,6 +1,6 @@
 body {
     background-color: #f8f9fa;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Allura', cursive;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -18,7 +18,12 @@ h1 {
     text-align: center;
 }
 
+.container {
+    position: relative;
+}
+
 .card {
+    position: relative;
     border: none;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -27,7 +32,9 @@ h1 {
     height: 80vh;
     display: flex;
     flex-direction: column;
+    background-color: #fff;
 }
+
 
 .card-body {
     padding: 1rem 2rem;
@@ -80,8 +87,62 @@ h1 {
     font-size: 0.75rem;
 }
 
-.btn-outline-danger {
+.btn-sm {
     border: none;
     background-color: transparent;
-    color: #e74c3c;
+   
+}
+
+
+@media (max-width: 1024px) {
+    .container {
+        width: 90%;
+    }
+    .card {
+        height: 85vh;
+    }
+    h1 {
+        font-size: 3rem;
+    }
+    .border {
+        width: 90%;
+    }
+
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+    }
+    .card {
+        height: 85vh;
+        width: 50vh;  
+    }
+    .form-control {
+        font-size: 1rem;
+    }
+    .border {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 100%;
+        padding: 0 1rem;
+    }
+    .card {
+        height: 60vh;
+        width: 30vh;  
+    }
+    h1 {
+        font-size: 2.5rem;
+    }
+    .form-control {
+        font-size: 0.875rem;
+    }
+    .border {
+        width: 100%;
+    }
+    
 }
