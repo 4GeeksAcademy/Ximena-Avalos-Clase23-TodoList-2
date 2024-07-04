@@ -17,6 +17,7 @@ export const ToDoList = ({ taskList, onDeleteTask }) => {
             <button
               className="btn btn-sm"
               onClick={() => onDeleteTask(index)}
+              style={{ marginLeft: 'auto' }}
             >
               x
             </button>
@@ -26,4 +27,3 @@ export const ToDoList = ({ taskList, onDeleteTask }) => {
     </ul>
   );
 };
-
