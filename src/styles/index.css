@@ -157,3 +157,30 @@ h1 {
     padding: 1rem;
   }
 }
+.create-new-user-container {
+  height: 150px;
+  width: 200px; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.create-new-user {
+  font-size: 1rem; 
+  text-align: center;
+  white-space: nowrap; 
+  overflow: hidden; 
+  text-overflow: ellipsis; 
+}
+
+@media (max-width: 768px) {
+  .create-new-user {
+    font-size: 0.875rem; 
+  }
+}
+
+@media (max-width: 480px) {
+  .create-new-user {
+    font-size: 0.75rem; 
+  }
+}

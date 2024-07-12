@@ -1,27 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 export const ToDoList = ({ taskList, onDeleteTask }) => {
-  const [hoveredIndex, setHoveredIndex] = useState(null);
-
   return (
-    <ul className="list-group list-group-flush">
+    <ul className="list-group">
       {taskList.map((task, index) => (
-        <li
-          key={index}
-          className="list-group-item"
-          onMouseEnter={() => setHoveredIndex(index)}
-          onMouseLeave={() => setHoveredIndex(null)}
-        >
-          <span style={{ flex: 1 }}>{task}</span>
-          {hoveredIndex === index && (
-            <button
-              className="btn btn-sm"
-              onClick={() => onDeleteTask(index)}
-              style={{ marginLeft: 'auto' }}
-            >
-              x
-            </button>
-          )}
+        <li key={index} className="list-group-item d-flex justify-content-between align-items-center">
+          {task.label}
+          <button className="btn btn-danger btn-sm" onClick={() => onDeleteTask(task)}>Delete</button>
         </li>
       ))}
     </ul>
