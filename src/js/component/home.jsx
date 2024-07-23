@@ -73,7 +73,7 @@ const Home = () => {
   const deleteServerTasks = async (task) => {
     console.log(task);
   
-    // Filtrar la lista de tareas para excluir la tarea con el id especificado
+   
     const deleteTaskList = taskList.filter((taskFilter) => taskFilter.id !== task.id);
   
     if (userSelected) {
@@ -86,13 +86,13 @@ const Home = () => {
           body: JSON.stringify({ todos: deleteTaskList })
         });
   
-        // Verificar si la respuesta no es correcta
+       
         if (!userResp.ok) throw new Error('Error updating tasks');
   
         const userData = await userResp.json();
         console.log(userData);
   
-        // Actualizar la lista de tareas en el estado
+        
         setTaskList(deleteTaskList);
         
       } catch (error) {
